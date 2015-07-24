@@ -5,7 +5,7 @@ body {
 .outside{
 	background-color:none;
 	width:60%;
-	height:2160px;
+	height:2205px;
 	margin:0px auto;
 }
 .bar{
@@ -34,9 +34,10 @@ body {
 
 .left{
 	width:550px;
-	height:1560px;
+	height:1605px;
 	background-color: #f6f5f2;
 	margin:10px;
+	margin-top:50px;
 	margin-left:43px;
 	float:left;
 }
@@ -45,6 +46,7 @@ body {
 	height:900px;
 	background-color:#EFEFEF;
 	margin: 10px;
+	margin-top:50px;
 	margin-right:43px;
 	float: right;
 }
