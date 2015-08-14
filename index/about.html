@@ -5,6 +5,15 @@
 		<title>反重力螃蟹</title>
 		<link href="css/nav.css" type="text/css" rel="stylesheet"/>
 		<link href="css/style.css" type="text/css" rel="stylesheet"/>
+		<link href="css/about.css" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="js/about.js"></script>
+		<style type="text/css">
+   		html,body{margin:0;padding:0;}
+   		.iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    	.iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+		</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+		
 	</head>
 	<body>
 		<div class="bar">
@@ -20,5 +29,27 @@
 					<li class="about"><a href="about.html">相关</a></li>
 				</ul>
 			</div>
+		<div class="ainfo">
+			<div id="address">
+				<ul>
+					<li><br>地址：湖北省武汉市华中科技大学国家
+					<br>	光电实验室</li>
+					<li>邮编：430074</li>
+					<li>电话：027-7777777</li>
+					<li>Fax：027-7777777</li>
+				</ul>
+			</div>
+			<div style="width:500px;height:300px;border:#ff8000 solid 2px;" id="dituContent"></div>
+			<script type="text/javascript" src="js/map.js"></script>
+			
+		<div id="content">
+            <div id="post">
+                <textarea class="transition"></textarea>
+                <input id="postBt" type="button" value="发表评论"/>
+                <input id="clearBt" type="button" value="清空所有已保存的数据"/>
+            </div>
+            <div id="comment"></div>
+        </div>
+		</div>
 	</body>
 </html>
