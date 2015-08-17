@@ -2,6 +2,11 @@ body {
   font-family: "Microsoft Yahei",微软雅黑;
   
 }
+.labpost{
+	width:600px;
+	height:1605px;
+	margin: auto;
+}
 .post{
 	height:500px;
 	width:550px;
