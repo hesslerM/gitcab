@@ -16,7 +16,7 @@
         #comment p span{display:inline; float:right;}
         #comment p .msg{width:738px;}
         #comment p .datetime{width:200px; color:#999; text-align:right;}
-.ainfo{width:800px;min-height: 800px;height:auto !important;margin:10px auto;border:2px solid #cc0000;}
+.ainfo{width:800px;min-height: 800px;height:auto !important;margin:100px auto;border:2px solid #cc0000;}
 .ainfo ul{list-style-type:none;}
 #address{float: left;margin: 10px;}
 #dituContent{float:right;margin:10px;}

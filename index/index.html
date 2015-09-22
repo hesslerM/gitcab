@@ -15,6 +15,7 @@
 		<script type="text/javascript" src="http://www.pengyaou.com/jquery-1.4.min.js"></script>
 		<script type="text/javascript" src="js/imgscircle.js"></script>
 		<script type="text/javascript" src="js/banner.js"></script> 
+		<script type="text/javascript" src="js/try.js"></script> 
 	</head>
 	<body>
 		<div class="bar">
@@ -74,10 +75,64 @@
 			</div>
 		<div class="middle">
 			<div class="left">
-				<div><h2>HTML学习</h2>
-					<p>加上您发往您拍个佛网是哪款的烦恼我鞥颇为上的那氛围ppjasdnf、上大放技能围观【安慰你个速度快念佛阿斯顿那范围送达方能为公平玩呢公安网</p>
+				<div class="content1">
+					<h2>HTML学习:百度地图API使用</h2>
+					<br>
+					<hr>
+					<p id="pan1">百度地图API，网页可以生成多种API，我在网页中使用了指向既定位置的地图API，这样方便他人可以快速的找到自己的位置。<strong>展开</strong></p>
+				    <div id="panhide1">
+				    	<p>在网页中插入百度地图</p>
+						<p>如果想在自己的网页上面加入百度地图的话，可以用百度地图的api.具体使用方法如下：</p>
+						<p>第一步：进入百度创建地图的网站<a href="http://api.map.baidu.com/lbsapi/creatmap/">http://api.map.baidu.com/lbsapi/creatmap/</a>，搜索出自己要展示的位置，如下图所示。<br /><br /><img src="http://files.jb51.net/file_images/article/201405/20140505154907.jpg?201445155017" width="470px"; alt="" /></p>
+						<p>第二步：设置地图，大家可以对网站显示地图的宽高进行设置，其余选项不动。</p>
+						<p>第三步：添加标注。点击第一个图标后，在右侧找到自己的位置，单击鼠标左键可定位。标记图标处可更换图标形状，名称和备注填入位置相关信息。</p>
+						<p>第四步：获取代码。将代码贴到你的网页里就OK了
+						<pre>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "&lt;a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&lt;/a&gt;"&gt;<br />&lt;html xmlns="&lt;a href="http://www.w3.org/1999/xhtml"&gt;http://www.w3.org/1999/xhtml&lt;/a&gt;"&gt;<br />&lt;head&gt;<br />&lt;meta http-equiv="Content-Type" content="text/html; charset=gb2312" /&gt;<br />&lt;meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" /&gt;<br />&lt;meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" /&gt;<br />&lt;title&gt;百度地图API自定义地图&lt;/title&gt;<br />&lt;!--引用百度地图API--&gt;<br />&lt;style type="text/css"&gt;<br />    html,body{margin:0;padding:0;}<br />    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}<br />    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}<br />&lt;/style&gt;<br />&lt;script type="text/javascript" src="&lt;a href="http://api.map.baidu.com/api?key=&amp;v=1.1&amp;services=true"&gt;&lt;/script"&gt;http://api.map.baidu.com/api?key=&amp;v=1.1&amp;services=true"&gt;&lt;/script&lt;/a&gt;&gt;<br />&lt;/head&gt;
+						<br />&lt;body&gt;<br />  &lt;!--百度地图容器--&gt;<br />  &lt;div style="width:697px;height:550px;border:#ccc solid 1px;" id="dituContent"&gt;&lt;/div&gt;<br />&lt;/body&gt;<br />&lt;script type="text/javascript"&gt;<br />    //创建和初始化地图函数：<br />    function initMap(){<br />        createMap();//创建地图<br />        setMapEvent();//设置地图事件<br />        addMapControl();//向地图添加控件<br />    }<br />    <br />    //创建地图函数：<br />    function createMap(){<br />        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图<br />        var point = new BMap.Point(113.116257,27.822879);//定义一个中心点坐标<br />        map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中<br />        window.map = map;//将map变量存储在全局<br />    }<br />    <br />    //地图事件设置函数：<br />    function setMapEvent(){<br />        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)<br />        map.enableScrollWheelZoom();//启用地图滚轮放大缩小<br />        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)<br />        map.enableKeyboard();//启用键盘上下左右键移动地图<br />    }<br />    <br />    //地图控件添加函数：<br />    function addMapControl(){<br />        //向地图中添加缩放控件<br />    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});<br />    map.addControl(ctrl_nav);<br />        //向地图中添加缩略图控件<br />    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});<br />    map.addControl(ctrl_ove);<br />        //向地图中添加比例尺控件<br />    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});<br />    map.addControl(ctrl_sca);<br />    }<br />    initMap();//创建和初始化地图<br />&lt;/script&gt;<br />&lt;/html&gt;<br />
+						</pre>
+
+				    <br>
 				</div>
+				</div>
+				<div class="content1">
+					<h2>HTML学习:学习css布局</h2>
+					<br>
+					<hr>
+					<p id="pan2">布局一只是我心中挥之不去的一个痛，各种定位浮动溢出。遇到这些情况我们应该怎么办呢，浏览下面的网站，让你豁然开朗<strong>展开</strong></p>
+				    <div id="panhide2">
+				    	<a href="http://zh.learnlayout.com/" target="_blank">点击这里就对啦~</a>
+				    </div>
+				</div>
+				<div class="content1">
+					<h2>HTML学习:瀑布流效果</h2>
+					<br>
+					<hr>
+					<p id="pan3">瀑布流效果被众多的图片搜索引擎和展示网站使用。这种方式可以制作出一个美观大方，并且实用的图片展示页。<strong>展开</strong></p>
+				    <div id="panhide3">
+				    	<p>自pinterest网站爆红以来，国内一度掀起“仿PIN”狂潮，诸如花瓣、蘑菇街等等。正是如此，“瀑布流”式布局受到广大网民的青睐。众多知名JS库，也相继出现“瀑布流”布局插件，譬如jQuery的Masonry插件、KISSY的waterfall插件等。今天闲来无聊，我也自己动手弄了段原生JS代码，实现了简单的“瀑布流”布局效果，当然肯定不能和以上那些优秀插件相提并论，有兴趣的朋友，可以去看看，希望能带给你或多或少的收获。 </p>
+				        <embed src="http://player.video.qiyi.com/b2a2adf641134b70215190553badb1cf/0/0/v_19rrnz19nc.swf-albumId=202327901-tvId=337277300-isPurchase=0-cnId=12" allowFullScreen="true" quality="high" width="495px" height="350px" align="center" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+				    </div>
+				</div>
+				<div class="content1">
+					<h2>HTML学习:媒体适配</h2>
+					<br>
+					<hr>
+					<p id="pan4">随着响应式设计模型的诞生，Web网站又要发生翻天腹地的改革浪潮，可能有些人会觉得在国内IE6用户居高不下的情况下，这些新的技术还不会广泛的蔓延下去，那你就错了，如今淘宝，凡客，携程等等公司都已经在大胆的尝试了这项技术，并完美的应用。<strong>展开</strong></p>
+				    <div id="panhide4">
+				    	<p>&nbsp; &nbsp; 我今天就总结一下响应式设计的核心CSS技术<strong>Media(媒体查询器)</strong>的用法。<br></p><p><br></p><h3>准备工作1：设置Meta标签</h3><p>首先我们在使用Media的时候需要先设置下面这段代码，来兼容移动设备的展示效果：</p><div><div><pre><ol><li>&lt;meta&nbsp;name="viewport"&nbsp;content="width=device-width,&nbsp;initial-scale=1.0,&nbsp;maximum-scale=1.0,&nbsp;user-scalable=no"&gt;</li></ol></pre></div></div><p>这段代码的几个参数解释：</p><ul style="list-style-type: disc; "><li><p><strong>width = device-width：</strong>宽度等于当前设备的宽度</p></li><li><p><strong>initial-scale：</strong>初始的缩放比例（默认设置为1.0） &nbsp;</p></li><li><p><strong>minimum-scale：</strong>允许用户缩放到的最小比例（默认设置为1.0）&nbsp; &nbsp;&nbsp;</p></li><li><p><strong>maximum-scale：</strong>允许用户缩放到的最大比例（默认设置为1.0）&nbsp; &nbsp;</p></li><li><p><strong>user-scalable：</strong>用户是否可以手动缩放（默认设置为no，因为我们不希望用户放大缩小页面）&nbsp;</p></li></ul><p><br></p><h3>准备工作2：加载兼容文件JS</h3><p>因为IE8既不支持HTML5也不支持CSS3 Media，所以我们需要加载两个JS文件，来保证我们的代码实现兼容效果：<br></p><div><div><pre><ol><li>&lt;!--[if&nbsp;lt&nbsp;IE&nbsp;9]&gt;</li><li>&nbsp;&nbsp;&lt;script&nbsp;src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"&gt;&lt;/script&gt;</li><li>&nbsp;&nbsp;&lt;script&nbsp;src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"&gt;&lt;/script&gt;</li><li>&lt;![endif]--&gt;</li></ol></pre></div></div><p><br></p><h3>准备工作3：设置IE渲染方式默认为最高(这部分可以选择添加也可以不添加)</h3><p>现在有很多人的IE浏览器都升级到IE9以上了，所以这个时候就有又很多诡异的事情发生了，例如现在是IE9的浏览器，但是浏览器的文档模式却是IE8:</p><p>为了防止这种情况，我们需要下面这段代码来让IE的文档模式永远都是最新的：</p><div><div><pre><ol><li>&lt;meta&nbsp;http-equiv="X-UA-Compatible"&nbsp;content="IE=edge"&gt;</li></ol></pre></div></div><p><br></p><p>不过我最近又发现了一个更给力的写法：</p><div><div><pre><ol><li>&lt;meta&nbsp;http-equiv="X-UA-Compatible"&nbsp;content="IE=Edge，chrome=1"&gt;</li></ol></pre></div></div><p>怎么这段代码后面加了一个<strong>chrome=1</strong>，这个<a href="http://zh.wikipedia.org/wiki/Google_Chrome_Frame" target="_blank" title="谷歌瀏覽器內嵌框架"><strong>Google Chrome Frame（谷歌内嵌浏览器框架GCF）</strong></a>，如果有的用户电脑里面装了这个chrome的插件，就可以让电脑里面的IE不管是哪个版本的都可以使用<strong>Webkit</strong>引擎及<strong>V8</strong>引擎进行排版及运算，无比给力，不过如果用户没装这个插件，那这段代码就会让IE以最高的文档模式展现效果。这段代码我还是建议你们用上，不过不用也是可以的。</p><p><br></p><h3>进入CSS3 Media写法<br></h3><p>我们先来看下下面这段代码，估计很多人在响应式的网站CSS很经常看到类似下面的这段代码：</p><div><div><pre><ol><li>@media&nbsp;screen&nbsp;and&nbsp;(max-width:&nbsp;960px){</li><li>&nbsp;&nbsp;&nbsp;&nbsp;body{</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:&nbsp;#000;</li><li>&nbsp;&nbsp;&nbsp;&nbsp;}</li><li>}</li></ol></pre></div></div><p>这个应该算是一个<strong>media</strong>的一个标准写法，上面这段CSS代码意思是：当页面<strong>小于960px</strong>的时候执行它下面的CSS.这个应该没有太大疑问。</p><p><br></p><p>应该有人会发现上面这段代码里面有个<strong>screen</strong>，他的意思是在告知设备在打印页面时使用<a href="http://baike.baidu.com/link?url=FOnnUbOa6X590ao9mYca7Rgz_z5bLBtmMV0qwimHDZIsaZFTC5vztLLlPvOnzCo5hGU5loIN9zhxJDBBRaQeTa" target="_blank" title="衬线字体">衬线字体</a>，在屏幕上显示时用无衬线字体。但是目前我发现很多网站都会直接省略screen,因为你的网站可能不需要考虑用户去打印时，你可以直接这样写：<br></p><div><div><pre><ol><li>@media&nbsp;(max-width:&nbsp;960px){</li><li>&nbsp;&nbsp;&nbsp;&nbsp;body{</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:&nbsp;#000;</li><li>&nbsp;&nbsp;&nbsp;&nbsp;}</li><li>}</li></ol></pre></div></div><p><br></p><h3>CSS2 Media用法</h3><p>其实并不是只有CSS3才支持<strong>Media</strong>的用法，早在CSS2开始就已经支持Media，具体用法，就是在HTML页面的<strong>head</strong>标签中插入如下的一段代码：</p><div><div><pre><ol><li>&lt;link&nbsp;rel="stylesheet"&nbsp;type="text/css"&nbsp;media="screen"&nbsp;href="style.css"&gt;</li></ol></pre></div></div><p><br></p><p>上面其实是CSS2实现的衬线用法，那CSS3的<strong>media</strong>难道就只能支持上面这一个功能吗？答案当然不是，他还有很多用法。</p><p><br></p><p>例如我们想知道现在的移动设备是不是纵向放置的显示屏，可以这样写：</p><div><div><pre><ol><li>&lt;link&nbsp;rel="stylesheet"&nbsp;type="text/css"&nbsp;media="screen&nbsp;and&nbsp;(orientation:portrait)"&nbsp;href="style.css"&gt;</li></ol></pre></div></div><p><br></p><p>我们把第一段的代码也用CSS2来实现，让它一样可以让页面宽度小于960的执行指定的样式文件：</p><div><div><pre><ol><li>&lt;link&nbsp;rel="stylesheet"&nbsp;type="text/css"&nbsp;media="screen&nbsp;and&nbsp;(max-width:960px)"&nbsp;href="style.css"&gt;</li></ol></pre></div></div><p><br></p><p>既然CSS2可以实现CSS的这个效果为什么不用这个方法呢，很多人应该会问，但是上面这个方法，最大的弊端是他会增加页面http的请求次数，增加了页面负担，我们用CSS3把样式都写在一个文件里面才是最佳的方法。</p><p><br></p><h3>回归CSS3 Media</h3><p>上面我们大概讲了下CSS2的媒体查询用法，现在我们重新回到CSS3的媒体查询，在第一段代码上面我用的是小于960px的尺寸的写法，那现在我们来实现<strong>等于960px</strong>尺寸的代码：</p><div><div><pre><ol><li>@media&nbsp;screen&nbsp;and&nbsp;(max-device-width:960px){</li><li>&nbsp;&nbsp;&nbsp;&nbsp;body{</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:red;</li><li>&nbsp;&nbsp;&nbsp;&nbsp;}</li><li>}</li></ol></pre></div></div><p><br></p><p>然后就是当浏览器尺寸<strong>大于960px</strong>时候的代码了：</p><div><div><pre><ol><li>@media&nbsp;screen&nbsp;and&nbsp;(min-width:960px){</li><li>&nbsp;&nbsp;&nbsp;&nbsp;body{</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:orange;</li><li>&nbsp;&nbsp;&nbsp;&nbsp;}</li><li>}</li></ol></pre></div></div><p><br></p><p>我们还可以混合使用上面的用法：</p><div><div><pre><ol><li>@media&nbsp;screen&nbsp;and&nbsp;(min-width:960px)&nbsp;and&nbsp;(max-width:1200px){</li><li>&nbsp;&nbsp;&nbsp;&nbsp;body{</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:yellow;</li><li>&nbsp;&nbsp;&nbsp;&nbsp;}</li><li>}</li></ol></pre></div></div><p>上面的这段代码的意思是当页面宽度大于960px小于1200px的时候执行下面的CSS。</p><p><br></p><h3>Media所有参数汇总</h3><p>以上就是我们最常需要用到的媒体查询器的三个特性，大于，等于，小于的写法。媒体查询器的全部功能肯定不止这三个功能，下面是我总结的它的一些参数用法解释：</p><ul style="list-style-type: disc; "><li><p><strong>width:</strong>浏览器可视宽度。</p></li><li><p><strong>height</strong>:浏览器可视高度。</p></li><li><p><strong>device-width</strong>:设备屏幕的宽度。</p></li><li><p><strong>device-height</strong>:设备屏幕的高度。</p></li><li><p><strong>orientation</strong>:检测设备目前处于横向还是纵向状态。</p></li><li><p><strong>aspect-ratio</strong>:检测浏览器可视宽度和高度的比例。(例如：aspect-ratio:16/9)</p></li><li><p><strong>device-aspect-ratio</strong>:检测设备的宽度和高度的比例。</p></li><li><p><strong>color</strong>:检测颜色的位数。（例如：min-color:32就会检测设备是否拥有32位颜色）</p></li><li><p><strong>color-inde</strong>x:检查设备颜色索引表中的颜色，他的值不能是负数。</p></li><li><p><strong>monochrome</strong>:检测单色楨缓冲区域中的每个像素的位数。（这个太高级，估计咱很少会用的到）</p></li><li><p><strong>resolution</strong>:检测屏幕或打印机的分辨率。(例如：min-resolution:300dpi或min-resolution:118dpcm)。</p></li><li><p><strong>grid</strong>：检测输出的设备是网格的还是位图设备。</p></li></ul><p><br></p><p>转自<strong>520UED</strong><a href="http://www.520ued.com" title="520UED前端开发小站" target="_blank"><strong>http://www.520ued.com</strong></a><br>感谢各位支持！</p>
+				    </div>
+				</div>
+				<div class="content1">
+					<h2>HTML学习:圣杯布局</h2>
+					<br>
+					<hr>
+					<p id="pan5">圣杯布局，又叫双飞翼布局，既是通常所致的两侧固定，中间栏自适应布局，这种布局方式被淘宝广泛使用。<strong>展开</strong></p>
+				    <div id="panhide5">
+				    	<p>圣杯布局我听就听了很久很久啦，而且每次看到圣杯布局总会离不开一篇文章，那就是a list apart里面的In Search of the Holy Grail。随着现在H5，CSS3的发展，IE6，IE7的逐渐退出舞台，或许现在工程师也没那么纠结了（或许而已，移动的大肆发展，还是出现了更多要兼容的东西，但是现在也逐渐不用再纠结那个IE6了吧，起码做移动端的就可以不用）。这篇文章06发布的，或许将来有一天人人的浏览器都支持CSS3的盒布局了，那浮动布局，绝对定位布局就可以退出舞台咯。圣杯布局它的目标是左右两栏定宽，中间那一行流式。</p>
+				    	<a href="http://blog.csdn.net/cui_angel/article/details/8306470" target="_blank">点击这里就对啦~</a>
+				    </div>
 				
+				</div>
 		    </div>
 		    <div class="right">
 		    	<div id="banner">	
@@ -128,7 +183,7 @@
 				</div>
 		   		<div class="link">	
 		    		<div class="sina"><a href="http://weibo.com/u/1698356623/home?topnav=1&wvr=6" target="_blank"><img src="imgs/weibo.png" /></a></div>
-		    		<div class="tencent"><a href="tencent://message/?uin=10000&Site=www.qq.com&Menu=yes" target="_blank"><img  style="CURSOR: pointer" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=576480766&o=www.qq.com&q=7', '_blank', 'height=502, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  border="0"src="imgs/qq.png" alt="点击这里给我发消息"/></a></div>
+		    		<div class="tencent"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=576480766&amp;site=qq&amp;menu=yes" target="_blank"><img  style="CURSOR: pointer" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=576480766&o=www.qq.com&q=7', '_blank', 'height=502, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  border="0"src="imgs/qq.png" alt="点击这里给我发消息"/></a></div>
 		    		<div class="gmail"><a href="https://github.com/hesslerM/" target="_blank"><img src="imgs/gmail.png" /></a></div>
 		    	</div>
 		   		<div class="search">
@@ -149,8 +204,6 @@
 		<div class="backtotop"><a href="#"   title="回到顶部"><img src="imgs/backtotop.png" width="64" height="64" /></a></div>
 		
 		<div class="bottom"></div>
-		    	
-		    
 	</body>
 </html>
 
